@@ -199,6 +199,24 @@
                  />
          </LinearLayout>
 
+         <!-- Row 8 -->
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:layout_marginTop="700dp"
+             >
+             <Button
+                 android:layout_width="390dp"
+                 android:layout_height="60dp"
+                 android:layout_marginTop="10dp"
+                 android:layout_marginLeft="10dp"
+                 android:id="@+id/ProcessButton"
+                 android:text="Process Order"
+                 android:textSize="20dp"
+                 />
+
+         </LinearLayout>
+
     </RelativeLayout>
 
 </ScrollView>
