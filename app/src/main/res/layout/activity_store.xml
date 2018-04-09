@@ -20,8 +20,10 @@
                 android:layout_height="100dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="10dp"
-                android:src="@drawable/Dasani-Water"
+                android:src="@drawable/Dasani_Water"
                 android:id="@+id/DasaniButton"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
                 />
             <TextView
                 android:layout_width="match_parent"
@@ -45,8 +47,10 @@
                 android:layout_height="100dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="10dp"
-                android:src="@drawable/Fruit-Maple-Oatmeal"
+                android:src="@drawable/Fruit_Maple_Oatmeal"
                 android:id="@+id/FruitButton"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
                 />
             <TextView
                 android:layout_width="wrap_content"
@@ -73,6 +77,8 @@
                 android:layout_marginTop="10dp"
                 android:src="@drawable/Hotcakes"
                 android:id="@+id/HotcakeButton"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
                 />
             <TextView
                 android:layout_width="wrap_content"
@@ -96,8 +102,10 @@
                 android:layout_height="100dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="10dp"
-                android:src="@drawable/Sausage-Biscuit-Regular-Size-Biscuit"
+                android:src="@drawable/Sausage_Biscuit_Regular_Size_Biscuit"
                 android:id="@+id/SausageBiscuitButton"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
                 />
             <TextView
                 android:layout_width="wrap_content"
@@ -121,8 +129,10 @@
                 android:layout_height="100dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="10dp"
-                android:src="@drawable/Bacon-Egg-Cheese-Biscuit-Regular-Size-Biscuit"
+                android:src="@drawable/Bacon_Egg_Cheese_Biscuit_Regular_Size_Biscuit"
                 android:id="@+id/BaconBiscuitButton"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
                 />
             <TextView
                 android:layout_width="wrap_content"
@@ -146,8 +156,10 @@
                 android:layout_height="100dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="10dp"
-                android:src="@drawable/Biscuit-with-Egg-Regular-Size-Biscuit"
+                android:src="@drawable/Biscuit_with_Egg_Regular_Size_Biscuit"
                 android:id="@+id/EggSausageButton"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
                 />
             <TextView
                 android:layout_width="wrap_content"
@@ -171,8 +183,10 @@
                  android:layout_height="100dp"
                  android:layout_marginTop="10dp"
                  android:layout_marginLeft="10dp"
-                 android:src="@drawable/Sausage-Burrito"
+                 android:src="@drawable/Sausage_Burrito"
                  android:id="@+id/SausageBurritoButton"
+                 android:adjustViewBounds="true"
+                 android:scaleType="fitCenter"
                  />
              <TextView
                  android:layout_width="wrap_content"
