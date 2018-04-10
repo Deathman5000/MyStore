@@ -65,6 +65,9 @@ public class StoreActivity extends AppCompatActivity {
                 intent.putExtra("itemPrice", price);
                 intent.putExtra("arrayCount", arrayCount);
                 intent.putExtra("itemCount", itemCount);
+                intent.putExtra("nameArray", nameArray);
+                intent.putExtra("quantityArray", quantityArray);
+                intent.putExtra("totalArray", totalArray);
                 startActivityForResult(intent,1);
             }
         });
@@ -80,6 +83,9 @@ public class StoreActivity extends AppCompatActivity {
                 intent.putExtra("itemPrice", price);
                 intent.putExtra("arrayCount", arrayCount);
                 intent.putExtra("itemCount", itemCount);
+                intent.putExtra("nameArray", nameArray);
+                intent.putExtra("quantityArray", quantityArray);
+                intent.putExtra("totalArray", totalArray);
                 startActivityForResult(intent,1);
             }
         });
@@ -95,6 +101,9 @@ public class StoreActivity extends AppCompatActivity {
                 intent.putExtra("itemPrice", price);
                 intent.putExtra("arrayCount", arrayCount);
                 intent.putExtra("itemCount", itemCount);
+                intent.putExtra("nameArray", nameArray);
+                intent.putExtra("quantityArray", quantityArray);
+                intent.putExtra("totalArray", totalArray);
                 startActivityForResult(intent,1);
             }
         });
@@ -110,6 +119,9 @@ public class StoreActivity extends AppCompatActivity {
                 intent.putExtra("itemPrice", price);
                 intent.putExtra("arrayCount", arrayCount);
                 intent.putExtra("itemCount", itemCount);
+                intent.putExtra("nameArray", nameArray);
+                intent.putExtra("quantityArray", quantityArray);
+                intent.putExtra("totalArray", totalArray);
                 startActivityForResult(intent,1);
             }
         });
@@ -125,6 +137,9 @@ public class StoreActivity extends AppCompatActivity {
                 intent.putExtra("itemPrice", price);
                 intent.putExtra("arrayCount", arrayCount);
                 intent.putExtra("itemCount", itemCount);
+                intent.putExtra("nameArray", nameArray);
+                intent.putExtra("quantityArray", quantityArray);
+                intent.putExtra("totalArray", totalArray);
                 startActivityForResult(intent,1);
             }
         });
@@ -140,6 +155,9 @@ public class StoreActivity extends AppCompatActivity {
                 intent.putExtra("itemPrice", price);
                 intent.putExtra("arrayCount", arrayCount);
                 intent.putExtra("itemCount", itemCount);
+                intent.putExtra("nameArray", nameArray);
+                intent.putExtra("quantityArray", quantityArray);
+                intent.putExtra("totalArray", totalArray);
                 startActivityForResult(intent,1);
             }
         });
@@ -155,6 +173,9 @@ public class StoreActivity extends AppCompatActivity {
                 intent.putExtra("itemPrice", price);
                 intent.putExtra("arrayCount", arrayCount);
                 intent.putExtra("itemCount", itemCount);
+                intent.putExtra("nameArray", nameArray);
+                intent.putExtra("quantityArray", quantityArray);
+                intent.putExtra("totalArray", totalArray);
                 startActivityForResult(intent,1);
             }
         });
