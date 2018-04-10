@@ -1,7 +1,9 @@
 package com.example.kb974609.mystore;
 
+import android.app.Activity;
+import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.EditText;
 import android.widget.TableLayout;
@@ -13,37 +15,75 @@ import android.widget.TextView;
  */
 
 public class CreateTable extends AppCompatActivity {
-
-    EditText userQuantity;
-    TextView tableProduct, tableQuantity, itemSelected;
-
-    String itemNameString;
-    Double itemPrice;
-    int arrayCount;
-    //public static String[] tableArrayProduct;
-    //public static Integer[] tableArrayQuanitity;
+    String name,stQuantity;
+    String [] nameArray = new String[7];
+    int [] quantityArray = new int[7];
+    double [] totalArray = new double[7];
+    int itemCount, index, quantity;
+    double price, total;
+    TextView itemName;
+    EditText itemQuantity;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.create_table);
+        itemName = findViewById(R.id.item);
+        itemQuantity = findViewById(R.id.itemQuantity);
+        TableLayout table = findViewById(R.id.tableLayout);
 
-        userQuantity = findViewById(R.id.user_quantity);
-        tableProduct = findViewById(R.id.table_product);
-        tableQuantity = findViewById(R.id.table_quantity);
-        //itemSelected = findViewById(R.id.item_selected);
+        Bundle b = this.getIntent().getExtras();
+        name = b.getString("name");
+        price = b.getDouble("itemPrice");
+        itemCount = b.getInt("itemCount");
+        index = b.getInt("arrayCount");
+        itemName.setText(name);
+        if (itemCount > 0){
+            //do something here to print out the table
+            //with just the name and quantity
+            nameArray = b.getStringArray("nameArray").clone();
+            quantityArray = b.getIntArray("quantityArray").clone();
+            for (int i = 0; i <= itemCount;i++){
+                TableRow rows = new TableRow(this);
+                TextView c1 = new TextView(this);
+                TextView c2 = new TextView(this);
 
-        Bundle extras = getIntent().getExtras();
-        if (extras != null) {
-            itemNameString = extras.getString("name");
-            itemPrice = extras.getDouble("itemPrice");
-            //itemSelected.setText("" + itemNameString);
-            arrayCount = extras.getInt("arrayCount");
+                c1.setText(nameArray[i]);
+                c2.setText(quantityArray[i]);
+
+                c1.setPadding(10,0,20,0);
+                c2.setPadding(20,0,20,0);
+
+                c1.setTypeface(Typeface.DEFAULT_BOLD);
+                c2.setTypeface(Typeface.DEFAULT_BOLD);
+
+                rows.addView(c1);
+                rows.addView(c2);
+
+                table.addView(rows);
+            }
+
+
+
         }
 
-        String[] products = StoreActivity.products;
-        Double[] value = StoreActivity.value;
+    }
 
+    @Override
+    public void onBackPressed() {
 
+        stQuantity = itemQuantity.getText().toString();
+        quantity = Integer.parseInt(stQuantity);
+        total = quantity * price;
+        nameArray[index] = name;
+        quantityArray[index] = quantity;
+        totalArray[index] = total;
+        Intent S = new Intent(CreateTable.this,StoreActivity.class);
+        S.putExtra("nameArray",nameArray);
+        S.putExtra("quantityArray",quantityArray);
+        S.putExtra("totalArray",totalArray);
+
+        setResult(RESULT_OK,S);
+        super.onBackPressed();
     }
 }
