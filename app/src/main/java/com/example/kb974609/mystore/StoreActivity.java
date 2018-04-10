@@ -12,7 +12,7 @@ public class StoreActivity extends AppCompatActivity {
     ImageButton dasani, oatmeal, hotcakes, sausageBiscuit, baconEggBiscuit,
             eggSausageBiscuit, sausageBurrito;
     Button process;
-    int arrayCount;
+    int arrayCount, itemCount;
     //int dcount, ocount, hcount, scount, bcount, ecount, sbcount;
     public static String[] products;
     public static Double[] value;
@@ -24,6 +24,7 @@ public class StoreActivity extends AppCompatActivity {
 
         //dcount = ocount = hcount = scount = bcount = ecount = sbcount = 0;
         arrayCount = 0;
+        itemCount = 0;
         products = new String[]{"Dasani Water ", "Fruit Maple Oatmeal ", "Hotcakes ",
                 "Sausage Biscuit ", "Bacon Egg Biscuit ", "Egg Sausage Biscuit ",
                 "Sausage Burrito "};
@@ -46,7 +47,8 @@ public class StoreActivity extends AppCompatActivity {
                 intent.putExtra("name", products[arrayCount]);
                 intent.putExtra("itemPrice", value[arrayCount]);
                 intent.putExtra("arrayCount", arrayCount);
-                startActivity(intent);
+                intent.putExtra("itemCount", itemCount);
+                startActivityForResult(intent,1);
             }
         });
 
@@ -58,7 +60,8 @@ public class StoreActivity extends AppCompatActivity {
                 intent.putExtra("name", products[arrayCount]);
                 intent.putExtra("itemPrice", value[arrayCount]);
                 intent.putExtra("arrayCount", arrayCount);
-                startActivity(intent);
+                intent.putExtra("itemCount", itemCount);
+                startActivityForResult(intent,1);
             }
         });
 
@@ -70,7 +73,8 @@ public class StoreActivity extends AppCompatActivity {
                 intent.putExtra("name", products[arrayCount]);
                 intent.putExtra("itemPrice", value[arrayCount]);
                 intent.putExtra("arrayCount", arrayCount);
-                startActivity(intent);
+                intent.putExtra("itemCount", itemCount);
+                startActivityForResult(intent,1);
             }
         });
 
@@ -82,7 +86,8 @@ public class StoreActivity extends AppCompatActivity {
                 intent.putExtra("name", products[arrayCount]);
                 intent.putExtra("itemPrice", value[arrayCount]);
                 intent.putExtra("arrayCount", arrayCount);
-                startActivity(intent);
+                intent.putExtra("itemCount", itemCount);
+                startActivityForResult(intent,1);
             }
         });
 
@@ -94,7 +99,8 @@ public class StoreActivity extends AppCompatActivity {
                 intent.putExtra("name", products[arrayCount]);
                 intent.putExtra("itemPrice", value[arrayCount]);
                 intent.putExtra("arrayCount", arrayCount);
-                startActivity(intent);
+                intent.putExtra("itemCount", itemCount);
+                startActivityForResult(intent,1);
             }
         });
 
@@ -106,7 +112,8 @@ public class StoreActivity extends AppCompatActivity {
                 intent.putExtra("name", products[arrayCount]);
                 intent.putExtra("itemPrice", value[arrayCount]);
                 intent.putExtra("arrayCount", arrayCount);
-                startActivity(intent);
+                intent.putExtra("itemCount", itemCount);
+                startActivityForResult(intent,1);
             }
         });
 
@@ -118,7 +125,8 @@ public class StoreActivity extends AppCompatActivity {
                 intent.putExtra("name", products[arrayCount]);
                 intent.putExtra("itemPrice", value[arrayCount]);
                 intent.putExtra("arrayCount", arrayCount);
-                startActivity(intent);
+                intent.putExtra("itemCount", itemCount);
+                startActivityForResult(intent,1);
             }
         });
 
