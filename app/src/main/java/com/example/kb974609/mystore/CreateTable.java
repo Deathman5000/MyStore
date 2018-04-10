@@ -43,13 +43,14 @@ public class CreateTable extends AppCompatActivity {
             //with just the name and quantity
             nameArray = b.getStringArray("nameArray").clone();
             quantityArray = b.getIntArray("quantityArray").clone();
-            for (int i = 0; i <= itemCount;i++){
+            int holder = quantityArray[0];
+            for (int i = 0; i <= itemCount-1;i++){
                 TableRow rows = new TableRow(this);
                 TextView c1 = new TextView(this);
                 TextView c2 = new TextView(this);
 
                 c1.setText(nameArray[i]);
-                c2.setText(quantityArray[i]);
+                c2.setText(String.format("%1d",quantityArray[i]));
 
                 c1.setPadding(10,0,20,0);
                 c2.setPadding(20,0,20,0);
