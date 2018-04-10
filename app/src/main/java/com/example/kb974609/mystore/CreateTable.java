@@ -1,5 +1,6 @@
 package com.example.kb974609.mystore;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -15,11 +16,11 @@ import android.widget.TextView;
 
 public class CreateTable extends AppCompatActivity {
     String name,stQuantity;
-    String [] nameArray;
-    int [] quantityArray;
-    Double [] totalArray;
+    String [] nameArray = new String[7];
+    int [] quantityArray = new int[7];
+    double [] totalArray = new double[7];
     int itemCount, index, quantity;
-    Double price, total;
+    double price, total;
     TextView itemName;
     EditText itemQuantity;
 
@@ -35,13 +36,13 @@ public class CreateTable extends AppCompatActivity {
         name = b.getString("name");
         price = b.getDouble("itemPrice");
         itemCount = b.getInt("itemCount");
-        index = b.getInt("index");
+        index = b.getInt("arrayCount");
+        itemName.setText(name);
         if (itemCount > 0){
             //do something here to print out the table
             //with just the name and quantity
-            Bundle c = this.getIntent().getExtras();
-            nameArray = c.getStringArray("nameArray");
-            quantityArray = c.getIntArray("quantityArray");
+            nameArray = b.getStringArray("nameArray").clone();
+            quantityArray = b.getIntArray("quantityArray").clone();
             for (int i = 0; i <= itemCount;i++){
                 TableRow rows = new TableRow(this);
                 TextView c1 = new TextView(this);
@@ -70,20 +71,19 @@ public class CreateTable extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
+
         stQuantity = itemQuantity.getText().toString();
         quantity = Integer.parseInt(stQuantity);
         total = quantity * price;
         nameArray[index] = name;
         quantityArray[index] = quantity;
         totalArray[index] = total;
-        index++;
-        Intent S = new Intent(getApplicationContext(),StoreActivity.class);
+        Intent S = new Intent(CreateTable.this,StoreActivity.class);
         S.putExtra("nameArray",nameArray);
         S.putExtra("quantityArray",quantityArray);
         S.putExtra("totalArray",totalArray);
-        S.putExtra("index",index);
 
         setResult(RESULT_OK,S);
+        super.onBackPressed();
     }
 }

@@ -12,10 +12,26 @@ public class StoreActivity extends AppCompatActivity {
     ImageButton dasani, oatmeal, hotcakes, sausageBiscuit, baconEggBiscuit,
             eggSausageBiscuit, sausageBurrito;
     Button process;
-    int arrayCount, itemCount;
+    int arrayCount, itemCount = 0;
     //int dcount, ocount, hcount, scount, bcount, ecount, sbcount;
     public static String[] products;
     public static Double[] value;
+    public static String[] nameArray = new String[7];
+    public static int [] quantityArray = new int[7];
+    public static double[] totalArray = new double[7];
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 1) {
+            if (resultCode == RESULT_OK) {
+                nameArray = data.getExtras().getStringArray("nameArray").clone();
+                quantityArray = data.getExtras().getIntArray("quantityArray").clone();
+                totalArray = data.getExtras().getDoubleArray("totalArray").clone();
+                itemCount++;
+            }
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +40,6 @@ public class StoreActivity extends AppCompatActivity {
 
         //dcount = ocount = hcount = scount = bcount = ecount = sbcount = 0;
         arrayCount = 0;
-        itemCount = 0;
         products = new String[]{"Dasani Water ", "Fruit Maple Oatmeal ", "Hotcakes ",
                 "Sausage Biscuit ", "Bacon Egg Biscuit ", "Egg Sausage Biscuit ",
                 "Sausage Burrito "};
@@ -43,9 +58,11 @@ public class StoreActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 arrayCount = 0;
+                String stProducts = products[arrayCount];
+                double price = value[arrayCount];
                 Intent intent=new Intent(getApplicationContext(), CreateTable.class);
-                intent.putExtra("name", products[arrayCount]);
-                intent.putExtra("itemPrice", value[arrayCount]);
+                intent.putExtra("name", stProducts);
+                intent.putExtra("itemPrice", price);
                 intent.putExtra("arrayCount", arrayCount);
                 intent.putExtra("itemCount", itemCount);
                 startActivityForResult(intent,1);
@@ -56,9 +73,11 @@ public class StoreActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 arrayCount = 1;
+                String stProducts = products[arrayCount];
+                double price = value[arrayCount];
                 Intent intent=new Intent(getApplicationContext(), CreateTable.class);
-                intent.putExtra("name", products[arrayCount]);
-                intent.putExtra("itemPrice", value[arrayCount]);
+                intent.putExtra("name", stProducts);
+                intent.putExtra("itemPrice", price);
                 intent.putExtra("arrayCount", arrayCount);
                 intent.putExtra("itemCount", itemCount);
                 startActivityForResult(intent,1);
@@ -69,9 +88,11 @@ public class StoreActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 arrayCount = 2;
+                String stProducts = products[arrayCount];
+                double price = value[arrayCount];
                 Intent intent=new Intent(getApplicationContext(), CreateTable.class);
-                intent.putExtra("name", products[arrayCount]);
-                intent.putExtra("itemPrice", value[arrayCount]);
+                intent.putExtra("name", stProducts);
+                intent.putExtra("itemPrice", price);
                 intent.putExtra("arrayCount", arrayCount);
                 intent.putExtra("itemCount", itemCount);
                 startActivityForResult(intent,1);
@@ -82,9 +103,11 @@ public class StoreActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 arrayCount = 3;
+                String stProducts = products[arrayCount];
+                double price = value[arrayCount];
                 Intent intent=new Intent(getApplicationContext(), CreateTable.class);
-                intent.putExtra("name", products[arrayCount]);
-                intent.putExtra("itemPrice", value[arrayCount]);
+                intent.putExtra("name", stProducts);
+                intent.putExtra("itemPrice", price);
                 intent.putExtra("arrayCount", arrayCount);
                 intent.putExtra("itemCount", itemCount);
                 startActivityForResult(intent,1);
@@ -95,9 +118,11 @@ public class StoreActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 arrayCount = 4;
+                String stProducts = products[arrayCount];
+                double price = value[arrayCount];
                 Intent intent=new Intent(getApplicationContext(), CreateTable.class);
-                intent.putExtra("name", products[arrayCount]);
-                intent.putExtra("itemPrice", value[arrayCount]);
+                intent.putExtra("name", stProducts);
+                intent.putExtra("itemPrice", price);
                 intent.putExtra("arrayCount", arrayCount);
                 intent.putExtra("itemCount", itemCount);
                 startActivityForResult(intent,1);
@@ -108,9 +133,11 @@ public class StoreActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 arrayCount = 5;
+                String stProducts = products[arrayCount];
+                double price = value[arrayCount];
                 Intent intent=new Intent(getApplicationContext(), CreateTable.class);
-                intent.putExtra("name", products[arrayCount]);
-                intent.putExtra("itemPrice", value[arrayCount]);
+                intent.putExtra("name", stProducts);
+                intent.putExtra("itemPrice", price);
                 intent.putExtra("arrayCount", arrayCount);
                 intent.putExtra("itemCount", itemCount);
                 startActivityForResult(intent,1);
@@ -121,9 +148,11 @@ public class StoreActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 arrayCount = 6;
+                String stProducts = products[arrayCount];
+                double price = value[arrayCount];
                 Intent intent=new Intent(getApplicationContext(), CreateTable.class);
-                intent.putExtra("name", products[arrayCount]);
-                intent.putExtra("itemPrice", value[arrayCount]);
+                intent.putExtra("name", stProducts);
+                intent.putExtra("itemPrice", price);
                 intent.putExtra("arrayCount", arrayCount);
                 intent.putExtra("itemCount", itemCount);
                 startActivityForResult(intent,1);
@@ -137,4 +166,6 @@ public class StoreActivity extends AppCompatActivity {
             }
         });
     }
+
+
 }
