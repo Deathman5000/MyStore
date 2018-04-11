@@ -16,9 +16,9 @@ import android.widget.TextView;
 
 public class CreateTable extends AppCompatActivity {
     String name,stQuantity;
-    String [] nameArray = new String[7];
-    int [] quantityArray = new int[7];
-    double [] totalArray = new double[7];
+    public static String [] nameArray = new String[7];
+    public static int [] quantityArray = new int[7];
+    public static double [] totalArray = new double[7];
     int itemCount, index, quantity;
     double price, total;
     TextView itemName;
@@ -37,54 +37,59 @@ public class CreateTable extends AppCompatActivity {
         price = b.getDouble("itemPrice");
         itemCount = b.getInt("itemCount");
         index = b.getInt("arrayCount");
+        //index = 0;
         itemName.setText(name);
-        if (itemCount > 0){
+        //if (itemCount > 0){
             //do something here to print out the table
             //with just the name and quantity
-            nameArray = b.getStringArray("nameArray").clone();
-            quantityArray = b.getIntArray("quantityArray").clone();
-            int holder = quantityArray[0];
-            for (int i = 0; i <= itemCount-1;i++){
-                TableRow rows = new TableRow(this);
-                TextView c1 = new TextView(this);
-                TextView c2 = new TextView(this);
+            //nameArray = b.getStringArray("nameArray").clone();
+            //quantityArray = b.getIntArray("quantityArray").clone();
+            //int holder = quantityArray[0];
+            for (int i = 0; i < 7;i++){
+                if ( nameArray[i] != null ) {
+                    TableRow rows = new TableRow(this);
+                    TextView c1 = new TextView(this);
+                    TextView c2 = new TextView(this);
 
-                c1.setText(nameArray[i]);
-                c2.setText(String.format("%1d",quantityArray[i]));
+                    c1.setText(nameArray[i]);
+                    c2.setText(String.format("%1d", quantityArray[i]));
 
-                c1.setPadding(10,0,20,0);
-                c2.setPadding(20,0,20,0);
+                    c1.setPadding(10, 0, 20, 0);
+                    c2.setPadding(20, 0, 20, 0);
 
-                c1.setTypeface(Typeface.DEFAULT_BOLD);
-                c2.setTypeface(Typeface.DEFAULT_BOLD);
+                    c1.setTypeface(Typeface.DEFAULT_BOLD);
+                    c2.setTypeface(Typeface.DEFAULT_BOLD);
 
-                rows.addView(c1);
-                rows.addView(c2);
+                    rows.addView(c1);
+                    rows.addView(c2);
 
-                table.addView(rows);
+                    table.addView(rows);
+                }
             }
-
-
-
-        }
+        //}
 
     }
 
     @Override
     public void onBackPressed() {
-
         stQuantity = itemQuantity.getText().toString();
         quantity = Integer.parseInt(stQuantity);
         total = quantity * price;
-        nameArray[index] = name;
-        quantityArray[index] = quantity;
-        totalArray[index] = total;
-        Intent S = new Intent(CreateTable.this,StoreActivity.class);
-        S.putExtra("nameArray",nameArray);
-        S.putExtra("quantityArray",quantityArray);
-        S.putExtra("totalArray",totalArray);
 
-        setResult(RESULT_OK,S);
+        if ( nameArray[index] != null ) {
+            quantityArray[index] = quantityArray[index] + quantity;
+        }
+        else {
+            nameArray[index] = name;
+            quantityArray[index] = quantity;
+            totalArray[index] = total;
+        }
+        //Intent S = new Intent(CreateTable.this,StoreActivity.class);
+        //S.putExtra("nameArray",nameArray);
+        //S.putExtra("quantityArray",quantityArray);
+        //S.putExtra("totalArray",totalArray);
+
+        //setResult(RESULT_OK,S);
         super.onBackPressed();
     }
 }

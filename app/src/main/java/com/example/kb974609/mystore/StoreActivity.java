@@ -20,7 +20,7 @@ public class StoreActivity extends AppCompatActivity {
     public static int [] quantityArray = new int[7];
     public static double[] totalArray = new double[7];
 
-    @Override
+/*    @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 1) {
@@ -31,7 +31,7 @@ public class StoreActivity extends AppCompatActivity {
                 itemCount++;
             }
         }
-    }
+    } */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
