@@ -183,7 +183,9 @@ public class StoreActivity extends AppCompatActivity {
         process.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent=new Intent(getApplicationContext(), ProcessOrder.class);
+                intent.putExtra("totalArray", totalArray);
+                startActivityForResult(intent, -1);
             }
         });
     }

@@ -17,7 +17,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".CreateTable"></activity>
-        <activity android:name=".TableValues"></activity>
     </application>
 
 </manifest>
