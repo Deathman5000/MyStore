@@ -18,15 +18,17 @@
         android:orientation="horizontal"
         android:layout_marginTop="30dp">
         <TextView
-            android:layout_width="125dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginTop="25dp"
+            android:paddingRight="10dp"
             android:textStyle="bold"
             android:id="@+id/item"
             />
         <EditText
             android:layout_width="100dp"
-            android:layout_height="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
             android:id="@+id/itemQuantity"
             android:inputType="number"
             />
@@ -35,6 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Your order so far"
+        android:textStyle="bold"
         android:layout_marginTop="100dp"/>
     <TableLayout
         android:layout_width="wrap_content"
