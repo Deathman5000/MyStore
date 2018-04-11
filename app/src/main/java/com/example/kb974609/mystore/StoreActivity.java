@@ -1,4 +1,19 @@
 package com.example.kb974609.mystore;
+/*
+    This app shows a menu of breakfast items for purchase.
+    If the button is clicked the user is prompted in another
+    screen on the quantity that is wanted. After the user is
+    done they can push process order and a table will show
+    how much each item cost, a subtotal, and a grand total.
+    Authors: Kyra Belanger, James Hund
+    Version: 04/10/18
+    Work distribution:
+                      Kyra: activity_store.xml, StoreActivity.java, CreateTable.java
+                      James: create_table.xml, table.xml, CreateTable.java, TableValues.java
+                      We both worked evenly on all of the files
+   Grade Deserved:    Kyra: 100%
+                      James: 100%
+ */
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -13,7 +28,6 @@ public class StoreActivity extends AppCompatActivity {
             eggSausageBiscuit, sausageBurrito;
     Button process;
     int arrayCount, itemCount = 0;
-    //int dcount, ocount, hcount, scount, bcount, ecount, sbcount;
     public static String[] products;
     public static Double[] value;
     public static String[] nameArray = new String[7];
@@ -183,6 +197,13 @@ public class StoreActivity extends AppCompatActivity {
         process.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                Intent intent = new Intent(getApplicationContext(), TableValues.class);
+                intent.putExtra("nameArray", nameArray);
+                intent.putExtra("quantityArray", quantityArray);
+                intent.putExtra("totalArray", totalArray);
+                intent.putExtra("itemCount", itemCount);
+                startActivity(intent);
 
             }
         });
